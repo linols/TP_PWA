@@ -1,0 +1,28 @@
+name: Déploiement sur le serveur
+
+on:
+  push:
+    branches:
+      - main  # Remplace par la branche que tu veux déployer
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code depuis GitHub
+        uses: actions/checkout@v3
+
+      - name: Connexion SSH et déploiement
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: 31.207.34.16
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/vite-project/TP_PWA
+            git reset --hard
+            git pull origin main
+            npm install
+            npm run build
+            sudo systemctl restart nginx
