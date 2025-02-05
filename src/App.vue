@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <h1>Mon Application Vue PWAOA</h1>
+    <h1>Mon Application Vue PWAA</h1>
     <router-view />
   </div>
 </template>
