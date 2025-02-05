@@ -95,7 +95,7 @@ export default {
           new Notification(title, options);
         }
 
-        // Séparer la vibration
+
         if ("vibrate" in navigator) {
           console.log("📳 Vibration déclenchée...");
           navigator.vibrate([200, 100, 200]);
