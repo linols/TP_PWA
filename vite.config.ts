@@ -7,6 +7,7 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
+      injectRegister: 'auto',
       manifest: {
         name: 'TP_PWA',
         short_name: 'TPPWA',
@@ -42,6 +43,9 @@ export default defineConfig({
             form_factor: "wide"
           }
         ]
+      },
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,png,webmanifest}'],
       }
     })
   ]

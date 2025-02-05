@@ -24,7 +24,6 @@
     batteryLevel.value = Math.round(battery.level * 100);
     charging.value = battery.charging;
   
-    // Changer la couleur en fonction du niveau de batterie
     if (batteryLevel.value > 50) {
       batteryClass.value = "battery-high";
     } else if (batteryLevel.value > 20) {
@@ -40,7 +39,6 @@
         const battery = await (navigator as any).getBattery();
         updateBatteryStatus(battery);
   
-        // Ajouter des écouteurs pour détecter les changements
         battery.addEventListener("levelchange", () => updateBatteryStatus(battery));
         battery.addEventListener("chargingchange", () => updateBatteryStatus(battery));
       } catch (error) {
