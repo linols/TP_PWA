@@ -1,4 +1,4 @@
-name: Déploiement sur le serveur
+name: Déploiement automatique
 
 on:
   push:
@@ -20,9 +20,29 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            echo "🚀 Connexion au serveur réussie. Début du déploiement..."
+
+            # Aller dans le dossier du projet
             cd /var/www/vite-project/TP_PWA
+
+            # Récupérer la dernière version du code
             git reset --hard
             git pull origin main
+
+            # Supprimer les anciennes dépendances pour éviter les erreurs
+            echo "🗑 Suppression des anciennes dépendances..."
+            rm -rf node_modules package-lock.json
+
+            # Réinstallation des dépendances
+            echo "📦 Installation des nouvelles dépendances..."
             npm install
+
+            # Lancer le build
+            echo "⚙️ Lancement du build..."
             npm run build
+
+            # Redémarrer Nginx pour prendre en compte les changements
+            echo "🔄 Redémarrage de Nginx..."
             sudo systemctl restart nginx
+
+            echo "✅ Déploiement terminé avec succès !"
