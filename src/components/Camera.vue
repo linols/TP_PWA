@@ -70,9 +70,9 @@ export default {
       if ("Notification" in window) {
         const permission = await Notification.requestPermission();
         if (permission === "granted") {
-          console.log("✅ Notifications autorisées !");
+          console.log("Notifications autorisées !");
         } else {
-          console.warn("❌ Notifications refusées !");
+          console.warn("Notifications refusées !");
         }
       }
     },

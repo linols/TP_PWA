@@ -1,8 +1,8 @@
 <template>
     <div class="call-container">
-      <button class="back-button" @click="$router.push('/')">🏠 Retour à l'accueil</button>
+      <button class="back-button" @click="$router.push('/')">Retour à l'accueil</button>
   
-      <h2>📞 Passer un appel</h2>
+      <h2>Passer un appel</h2>
   
       <input type="tel" v-model="phoneNumber" placeholder="Entrez un numéro" />
   
