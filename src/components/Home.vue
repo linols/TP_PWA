@@ -7,6 +7,7 @@
     <button @click="goTo('/battery')">🔋 Voir le niveau de batterie</button>
     <button @click="goTo('/chat')">💬 Ouvrir le Chat</button>
     <button @click="goTo('/auth')">🔐 Authentification WebAuthn</button>
+    <button @click="goTo('/payment')">💳 Effectuer un paiement</button>
   </div>
 </template>
 

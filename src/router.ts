@@ -6,6 +6,7 @@ import CallPhone from "./components/CallPhone.vue";
 import Battery from "./components/Battery.vue";
 import ChatComponent from "./components/ChatComponent.vue";
 import WebAuth from "./components/WebAuth.vue";
+import Payment from "./components/Payment.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -14,7 +15,8 @@ const routes = [
   { path: "/call", component: CallPhone },
   { path: "/battery", component: Battery },
   { path: "/chat", component: ChatComponent },
-  { path: "/auth", component: WebAuth }
+  { path: "/auth", component: WebAuth },
+  { path: "/payment", component: Payment },
 ];
 
 const router = createRouter({
